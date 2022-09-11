@@ -85,7 +85,9 @@ module.exports = {
 			{
 				'relativeDepth': 1,
 				'aliases': [
+					{'alias': '~', 'matcher': '^client'}, // client/* -> ~/*
 					{'alias': '@components', 'matcher': '^client\/js\/(components)'}, // client/js/components/* -> @components/*
+					{'alias': '@theme', 'matcher': '^client\/js\/(theme)'}, // client/js/theme/* -> @theme/*
 					{'alias': '@generic', 'matcher': '^client\/js\/(generic)'}, // client/js/generic/* -> @generic/*
 					{'alias': '@hooks', 'matcher': '^client\/js\/(hooks)'}, // client/js/hooks/* -> @hooks/*
 					{'alias': '@pages', 'matcher': '^client\/js\/(pages)'}, // client/js/pages/* -> @pages/*

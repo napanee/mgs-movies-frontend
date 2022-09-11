@@ -1,6 +1,5 @@
 import {join} from 'path';
 
-import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin';
 import Dotenv from 'dotenv-webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import NodemonPlugin from 'nodemon-webpack-plugin';
@@ -12,8 +11,6 @@ import {deploymentEnv, webpackDir} from '../utils/env';
 export const nodemonPlugin = new NodemonPlugin();
 
 export const progressPlugin = new ProgressPlugin();
-
-export const reactRefreshWebpackPlugin = new ReactRefreshWebpackPlugin();
 
 let envFile;
 

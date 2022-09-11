@@ -6,10 +6,11 @@ import session from 'express-session';
 import logger from 'morgan';
 import {StaticRouter} from 'react-router-dom/server';
 import sessionFileStore from 'session-file-store';
-import {ServerStyleSheet} from 'styled-components';
+import {ServerStyleSheet, ThemeProvider} from 'styled-components';
 import {v4 as uuid} from 'uuid';
 
 import App from '@components/app';
+import {theme} from '@theme/theme';
 
 import {STATIC_ROOT, STATIC_URL} from './config/config';
 
@@ -46,7 +47,9 @@ app.get('*', async (req, res) => {
 	const component = sheet.collectStyles(
 		<StaticRouter basename="/" location={req.url}>
 			<ApolloProvider client={client}>
-				<App />
+				<ThemeProvider theme={theme}>
+					<App />
+				</ThemeProvider>
 			</ApolloProvider>
 		</StaticRouter>
 	);

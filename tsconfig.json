@@ -18,7 +18,9 @@
 		"baseUrl": "./",
 		"rootDir": "./",
 		"paths": {
+			"~/*": ["client/*"],
 			"@components/*": ["client/js/components/*"],
+			"@theme/*": ["client/js/theme/*"],
 			"@pages/*": ["client/js/pages/*"],
 		},
 		"typeRoots": ["./node_modules/@types", "./@types"],

@@ -17,3 +17,10 @@ export const graphQLRule = {
 		loader: 'graphql-tag/loader',
 	},
 };
+
+export const fontLoader = {
+	test: /\.(woff|woff2|eot|ttf|svg)$/,
+	use: {
+		loader: 'url-loader',
+	},
+};

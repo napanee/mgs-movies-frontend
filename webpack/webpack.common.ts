@@ -19,6 +19,7 @@ const config: Configuration = {
 		rules: [
 			rules.typescriptRule,
 			rules.graphQLRule,
+			rules.fontLoader,
 		],
 	},
 	plugins: [
@@ -27,7 +28,9 @@ const config: Configuration = {
 	],
 	resolve: {
 		alias: {
+			'~': join(rootDir, 'client'),
 			'@components': join(rootDir, 'client', 'js', 'components'),
+			'@theme': join(rootDir, 'client', 'js', 'theme'),
 			'@pages': join(rootDir, 'client', 'js', 'pages'),
 		},
 		extensions: ['.js', '.ts', '.tsx'],

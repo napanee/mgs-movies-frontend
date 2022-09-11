@@ -1,8 +1,11 @@
 import {ApolloClient, ApolloProvider, HttpLink, InMemoryCache} from '@apollo/client';
 import {hydrateRoot} from 'react-dom/client';
 import {BrowserRouter} from 'react-router-dom';
+import {ThemeProvider} from 'styled-components';
 
 import App from './components/app';
+import GlobalStyles from './theme/globalStyles';
+import {theme} from './theme/theme';
 
 
 const container = document.getElementById('reactele');
@@ -13,7 +16,10 @@ const client = new ApolloClient({link, cache});
 hydrateRoot(container!, (
 	<BrowserRouter basename="/">
 		<ApolloProvider client={client}>
-			<App />
+			<ThemeProvider theme={theme}>
+				<GlobalStyles />
+				<App />
+			</ThemeProvider>
 		</ApolloProvider>
 	</BrowserRouter>
 ));
