@@ -3,6 +3,8 @@ import {resolve} from 'path';
 import {Configuration} from 'webpack';
 import nodeExternals from 'webpack-node-externals';
 
+import * as plugins from './plugins';
+
 
 const config: Configuration = {
 	target: 'node',
@@ -18,6 +20,9 @@ const config: Configuration = {
 		__filename: false, // and __filename return blank or /
 	},
 	externals: [nodeExternals()], // Need this to avoid error when working with Express
+	plugins: [
+		plugins.nodemonPlugin,
+	],
 };
 
 export default config;

@@ -1,7 +1,6 @@
 import {join, resolve} from 'path';
 
 import * as plugins from './plugins';
-import {defaultPort, devServerHost} from './utils/env';
 
 import {Configuration} from '../webpack.config.babel';
 
@@ -16,28 +15,9 @@ const config: Configuration = {
 		path: join(process.cwd(), 'build', 'static'),
 		publicPath: '/static/',
 	},
-};
-
-// Development
-if (process.env.NODE_ENV !== 'production') {
-	config.plugins = [
-		plugins.reactRefreshWebpackPlugin,
+	plugins: [
 		plugins.htmlWebpackPlugin,
-	];
-	config.output = {
-		publicPath: `http://${devServerHost}:${defaultPort}/`,
-		filename: '[name].[fullhash].js',
-	};
-	config.devServer = {
-		client: {
-			overlay: false,
-		},
-		headers: {'Access-Control-Allow-Origin': '*'},
-		historyApiFallback: true,
-		host: devServerHost,
-		hot: true,
-		port: defaultPort,
-	};
-}
+	],
+};
 
 export default config;

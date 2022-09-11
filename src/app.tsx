@@ -4,7 +4,6 @@ import fetch from 'cross-fetch';
 import express, {Application, ErrorRequestHandler} from 'express';
 import session from 'express-session';
 import logger from 'morgan';
-import nunjucks from 'nunjucks';
 import {StaticRouter} from 'react-router-dom/server';
 import sessionFileStore from 'session-file-store';
 import {ServerStyleSheet} from 'styled-components';
@@ -19,14 +18,7 @@ const app: Application = express();
 const FileStore = sessionFileStore(session);
 const sessionTTL = 24 * 60 * 60;
 
-nunjucks.configure('src/views', {
-	autoescape: true,
-	express: app,
-	noCache: app.get('env') === 'development',
-});
-
 app.use(logger('dev'));
-app.set('view engine', 'html');
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(session({
@@ -65,12 +57,26 @@ app.get('*', async (req, res) => {
 		const styles = sheet.getStyleTags();
 
 		res.status(200);
-		res.render('base.html', {
-			styles,
-			apolloState: JSON.stringify(client.cache.extract()),
-			content,
-			static: STATIC_URL,
-		});
+		res.send(`
+			<!doctype html>
+			<html lang="en">
+				<head>
+					<meta charSet="utf-8" />
+					<meta content="width=device-width, initial-scale=1" name="viewport" />
+					<title>Movies - Frontend</title>
+
+					${styles}
+				</head>
+				<body>
+					<div class="app" id="reactele">${content}</div>
+					<script>
+						window.__APOLLO_STATE__ = ${JSON.stringify(client.cache.extract())};
+					</script>
+					<script src="${STATIC_URL}js/app.js"></script>
+				</body>
+			</html>
+		`);
+		res.end();
 	} catch (error) {
 		/* eslint-disable no-console */
 		console.log('############ ERROR ############');
