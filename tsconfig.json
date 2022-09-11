@@ -1,0 +1,33 @@
+{
+	"compilerOptions": {
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"outDir": "./build",
+		"module": "commonjs",
+		"target": "esnext",
+		"lib": ["es6", "dom"],
+		"sourceMap": true,
+		"allowJs": false,
+		"jsx": "react-jsx",
+		"moduleResolution": "node",
+		"noEmit": true,
+		"noImplicitReturns": true,
+		"noImplicitThis": true,
+		"noImplicitAny": true,
+		"strictNullChecks": true,
+		"baseUrl": "./",
+		"rootDir": "./",
+		"paths": {
+			"@components/*": ["client/js/components/*"],
+			"@pages/*": ["client/js/pages/*"],
+		},
+		"typeRoots": ["./node_modules/@types", "./@types"],
+		"allowSyntheticDefaultImports": true,
+		"esModuleInterop": true,
+		"importsNotUsedAsValues": "preserve",
+		"incremental": true,
+		"skipLibCheck": true,
+	},
+	"include": ["**/*.ts", "**/*.tsx", "**/*.js"],
+	"exclude": ["**/node_modules", "**/.*/"]
+}
