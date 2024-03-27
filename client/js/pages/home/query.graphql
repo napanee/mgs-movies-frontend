@@ -1,14 +1,16 @@
-query dashboard {
-	actors {
-		totalCount
-	}
-	directors {
-		totalCount
-	}
-	genres {
-		totalCount
-	}
-	movies {
-		totalCount
+query home {
+	movies(limit: 10, order: RELEASE_DATE_DESC, filter: STAGEABLE) {
+		edges {
+			node {
+				id
+				title
+				backdrop
+				logo
+				poster
+				genres {
+					name
+				}
+			}
+		}
 	}
 }
