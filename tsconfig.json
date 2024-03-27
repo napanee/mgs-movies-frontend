@@ -18,7 +18,7 @@
 		"baseUrl": "./",
 		"rootDir": "./",
 		"paths": {
-			"~/*": ["client/*"],
+			"~/*": ["./*", "src/*", "client/js/*"],
 			"@components/*": ["client/js/components/*"],
 			"@theme/*": ["client/js/theme/*"],
 			"@pages/*": ["client/js/pages/*"],
