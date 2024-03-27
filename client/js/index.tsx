@@ -4,7 +4,6 @@ import {BrowserRouter} from 'react-router-dom';
 import {ThemeProvider} from 'styled-components';
 
 import App from './components/app';
-import GlobalStyles from './theme/globalStyles';
 import {theme} from './theme/theme';
 
 
@@ -17,7 +16,6 @@ hydrateRoot(container!, (
 	<BrowserRouter basename="/">
 		<ApolloProvider client={client}>
 			<ThemeProvider theme={theme}>
-				<GlobalStyles />
 				<App />
 			</ThemeProvider>
 		</ApolloProvider>
