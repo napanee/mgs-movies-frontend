@@ -1,4 +1,5 @@
-// require('ts-node/register');
+const {pathsToModuleNameMapper} = require('ts-jest');
+const {compilerOptions} = require('./tsconfig');
 
 
 module.exports = {
@@ -14,10 +15,7 @@ module.exports = {
 		'**/*.{js,ts}',
 	],
 	moduleNameMapper: {
-		'~(.*)$': '<rootDir>/client/$1',
-		'@components(.*)$': '<rootDir>/client/js/components/$1',
-		'@theme(.*)$': '<rootDir>/client/js/theme/$1',
-		'@pages(.*)$': '<rootDir>/client/js/pages/$1',
+		...pathsToModuleNameMapper(compilerOptions.paths, {prefix: '<rootDir>/'}),
 	},
 	setupFiles: [
 	],

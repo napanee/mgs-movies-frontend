@@ -6,10 +6,10 @@
 		"jsx": "react-jsx",
     "baseUrl": "./",
 		"paths": {
-			"~/*": ["./*", "src/*", "client/js/*"],
+			"~/*": ["./*", "src/*", "client/*"],
 			"@components/*": ["client/js/components/*"],
 			"@theme/*": ["client/js/theme/*"],
-			"@pages/*": ["client/js/pages/*"],
+			"@pages/*": ["client/js/pages/*"]
 		},
 		"allowJs": false,
 		"skipLibCheck": true,
@@ -21,13 +21,13 @@
 		"noImplicitReturns": true,
 		"noImplicitThis": true,
 		"noImplicitAny": true,
-		"strictNullChecks": true,
+		"strictNullChecks": true
 	},
 	"include": ["**/*.ts", "**/*.tsx"],
 	"exclude": ["**/node_modules", "**/.*/"],
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS",
-    },
-  },
+      "module": "CommonJS"
+    }
+  }
 }

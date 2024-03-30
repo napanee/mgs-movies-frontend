@@ -8,5 +8,6 @@ module.exports = {
 				allowDeclareFields: true,
 			},
 		],
+		'tsconfig-paths-module-resolver',
 	],
 };

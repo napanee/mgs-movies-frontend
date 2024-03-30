@@ -80,21 +80,7 @@ module.exports = {
 		],
 		'space-in-parens': ['error', 'never'],
 
-		'import-alias/import-alias': [
-			'error',
-			{
-				'relativeDepth': 1,
-				'aliases': [
-					{'alias': '~', 'matcher': '^client'}, // client/* -> ~/*
-					{'alias': '@components', 'matcher': '^client\/js\/(components)'}, // client/js/components/* -> @components/*
-					{'alias': '@theme', 'matcher': '^client\/js\/(theme)'}, // client/js/theme/* -> @theme/*
-					{'alias': '@generic', 'matcher': '^client\/js\/(generic)'}, // client/js/generic/* -> @generic/*
-					{'alias': '@hooks', 'matcher': '^client\/js\/(hooks)'}, // client/js/hooks/* -> @hooks/*
-					{'alias': '@pages', 'matcher': '^client\/js\/(pages)'}, // client/js/pages/* -> @pages/*
-					{'alias': '@router', 'matcher': '^client\/js\/(router)'}, // client/js/router/* -> @router/*
-				]
-			}
-		],
+		'import-alias/import-alias': ['error', {'relativeDepth': 1}],
 
 		'import/newline-after-import': ['error', {'count': 2}],
 		'import/no-extraneous-dependencies': 'off',

@@ -1,10 +1,9 @@
-import {join, resolve} from 'path';
+import {resolve} from 'path';
 
 import {Configuration} from 'webpack';
 
 import * as plugins from './plugins';
 import * as rules from './rules';
-import {rootDir} from './utils/env';
 
 
 const config: Configuration = {
@@ -27,13 +26,10 @@ const config: Configuration = {
 		plugins.dotenvPlugin,
 	],
 	resolve: {
-		alias: {
-			'~': join(rootDir, 'client'),
-			'@components': join(rootDir, 'client', 'js', 'components'),
-			'@theme': join(rootDir, 'client', 'js', 'theme'),
-			'@pages': join(rootDir, 'client', 'js', 'pages'),
-		},
 		extensions: ['.js', '.ts', '.tsx'],
+		plugins: [
+			plugins.tsconfigPathsPlugin,
+		],
 		modules: [
 			resolve(process.cwd(), 'client', 'js'),
 			resolve(process.cwd(), 'node_modules'),
