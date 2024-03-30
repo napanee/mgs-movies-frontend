@@ -26,7 +26,7 @@ export default createGlobalStyle`
 
 	html,
 	body {
-		// Allow better font smoothing:
+		/* Allow better font smoothing: */
 		-moz-osx-font-smoothing: grayscale;
 		-webkit-font-smoothing: antialiased;
 		font-family: Nunito, Verdana, Arial, sans-serif;

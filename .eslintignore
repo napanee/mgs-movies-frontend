@@ -1,5 +1,7 @@
 node_modules
 build
+babel.config.js
+jest.config.js
 .eslintrc.js
 *.helper.ts
 graphql-types.ts
