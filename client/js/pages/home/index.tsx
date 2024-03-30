@@ -1,12 +1,9 @@
-import SwiperCore, {Autoplay, Navigation, Pagination} from 'swiper';
+import {Autoplay, Navigation, Pagination} from 'swiper/modules';
 import {Swiper, SwiperSlide} from 'swiper/react';
 
 
 import {useHomeQuery} from './query.helper';
 import * as S from './styles';
-
-
-SwiperCore.use([Autoplay, Navigation, Pagination]);
 
 
 const Home = () => {
@@ -24,6 +21,7 @@ const Home = () => {
 					speed={1000}
 					loop={true}
 					pagination={true}
+					modules={[Autoplay, Navigation, Pagination]}
 				>
 					{data?.movies.edges.map(({node}) => {
 						return (
