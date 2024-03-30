@@ -17,5 +17,16 @@ declare module 'styled-components' {
 			primary: IPalette;
 			secondary: IPalette;
 		};
+		swiper: {
+			color: string;
+			index: number;
+			pagination: {
+				color: {
+					inactive: string;
+					main: string;
+				};
+				index: number;
+			};
+		};
 	}
 }

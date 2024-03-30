@@ -6,19 +6,22 @@ import {useHomeQuery} from './query.helper';
 import * as S from './styles';
 
 
+const delay = 3500;
+const speed = 1000;
+
 const Home = () => {
-	const {loading: isLoading, data} = useHomeQuery();
+	const {data} = useHomeQuery();
 
 	return (
 		<S.Wrapper>
-			<S.SliderWrap>
+			<S.SliderWrapper delay={delay} speed={speed}>
 				<Swiper
 					allowTouchMove={false}
 					autoplay={{
-						delay: 3500,
+						delay,
 						disableOnInteraction: true,
 					}}
-					speed={1000}
+					speed={speed}
 					loop={true}
 					pagination={true}
 					modules={[Autoplay, Navigation, Pagination]}
@@ -32,7 +35,7 @@ const Home = () => {
 						);
 					})}
 				</Swiper>
-			</S.SliderWrap>
+			</S.SliderWrapper>
 		</S.Wrapper>
 	);
 };

@@ -17,4 +17,15 @@ export const theme: DefaultTheme = {
 			contrastText: '#ffffff',
 		},
 	},
+	swiper: {
+		index: 1,
+		color: '#ffffff',
+		pagination: {
+			color: {
+				main: '#ffffff',
+				inactive: 'rgba(255, 255, 255, 0.4)',
+			},
+			index: 10,
+		},
+	},
 };
