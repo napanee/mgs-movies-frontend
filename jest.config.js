@@ -9,6 +9,7 @@ module.exports = {
 	moduleFileExtensions: ['js', 'ts', 'tsx', 'd.ts'],
 	coveragePathIgnorePatterns: [
 		'./server.ts',
+		'.helper.ts',
 	],
 	collectCoverageFrom: [
 		'**/*.{js,ts}',
