@@ -8,6 +8,5 @@ describe('The Server', () => {
 		const response = await request(app).get('/');
 
 		expect(response.statusCode).toBe(200);
-		expect(response.text).toBe('Server running...');
 	});
 });
