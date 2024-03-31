@@ -8,16 +8,39 @@ import {StaticRouter} from 'react-router-dom/server';
 import sessionFileStore from 'session-file-store';
 import {ServerStyleSheet, ThemeProvider} from 'styled-components';
 import {v4 as uuid} from 'uuid';
+import {webpack} from 'webpack';
+import webpackDevMiddleware from 'webpack-dev-middleware';
+import webpackHotMiddleware from 'webpack-hot-middleware';
 
 import App from '@components/app';
 import {theme} from '@theme/theme';
 
 import {STATIC_ROOT, STATIC_URL} from './config/config';
 
+import {configMergedClient as webpackConfig} from '../webpack.config';
+
 
 const app: Application = express();
 const FileStore = sessionFileStore(session);
 const sessionTTL = 24 * 60 * 60;
+
+if (process.env.NODE_ENV !== 'production') {
+	const webpackCompiler = webpack(webpackConfig);
+
+	app.use(
+		webpackDevMiddleware(webpackCompiler, {
+			publicPath: webpackConfig.output?.publicPath,
+		})
+	);
+
+	app.use(
+		webpackHotMiddleware(webpackCompiler, {
+			log: false,
+			path: '/__webpack_hmr',
+			heartbeat: 2000,
+		})
+	);
+}
 
 app.use(logger('dev'));
 app.use(express.urlencoded({extended: true}));

@@ -1,7 +1,7 @@
 import app from './app';
 
 
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 8081;
 
 export const server = app.listen(port, () => {
 	// eslint-disable-next-line no-console

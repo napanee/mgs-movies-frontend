@@ -1,0 +1,10 @@
+{
+  "watch": "./src",
+  "ignore": [
+    "public/",
+    "node_modules/",
+    "webpack.config.js",
+    "./**/*.test.ts"
+  ],
+  "exec": "babel-node ./src/server.ts --extensions .ts,.tsx"
+}
