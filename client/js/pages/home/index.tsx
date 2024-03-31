@@ -13,30 +13,28 @@ const Home = () => {
 	const {data} = useHomeQuery();
 
 	return (
-		<S.Wrapper>
-			<S.SliderWrapper delay={delay} speed={speed}>
-				<Swiper
-					allowTouchMove={false}
-					autoplay={{
-						delay,
-						disableOnInteraction: true,
-					}}
-					speed={speed}
-					loop={true}
-					pagination={true}
-					modules={[Autoplay, Navigation, Pagination]}
-				>
-					{data?.movies.edges.map(({node}) => {
-						return (
-							<SwiperSlide key={node.id}>
-								<img src={`http://localhost:3000/media/${node.backdrop}`} className="backdrop" />
-								<img src={`http://localhost:3000/media/${node.logo}`} className="logo" />
-							</SwiperSlide>
-						);
-					})}
-				</Swiper>
-			</S.SliderWrapper>
-		</S.Wrapper>
+		<S.SliderWrapper delay={delay} speed={speed}>
+			<Swiper
+				allowTouchMove={false}
+				autoplay={{
+					delay,
+					disableOnInteraction: true,
+				}}
+				speed={speed}
+				loop={true}
+				pagination={true}
+				modules={[Autoplay, Navigation, Pagination]}
+			>
+				{data?.movies.edges.map(({node}) => {
+					return (
+						<SwiperSlide key={node.id}>
+							<img src={`http://localhost:3000/media/${node.backdrop}`} className="backdrop" />
+							<img src={`http://localhost:3000/media/${node.logo}`} className="logo" />
+						</SwiperSlide>
+					);
+				})}
+			</Swiper>
+		</S.SliderWrapper>
 	);
 };
 

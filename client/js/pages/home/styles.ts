@@ -1,12 +1,6 @@
 import styled, {css} from 'styled-components';
 
 
-export const Wrapper = styled.div`
-	${({theme}) => css`
-		color: ${theme.palette.common.black}
-	`};
-`;
-
 export const Backdrop = styled.div`
 	img {
 		display: block;
@@ -144,4 +138,3 @@ export const SliderWrapper = styled.div<{delay: number; speed: number}>`
 		}
 	}
 `;
-
