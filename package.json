@@ -11,7 +11,7 @@
     "lint": "npm run lint:js; npm run lint:scss;",
     "ci-lint": "npm run lint",
     "test": "jest --coverage --runInBand --verbose --detectOpenHandles",
-    "ci-test": "jest --detectOpenHandles",
+    "ci-test": "npm run codegen && jest --detectOpenHandles",
     "test:watch": "jest --coverage --watch --runInBand",
     "codegen": "graphql-codegen --config codegen.ts"
   },
