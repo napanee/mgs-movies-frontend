@@ -1,0 +1,16 @@
+services:
+  app:
+    image: ghcr.io/${GITHUB_REPOSITORY}/app:${COMPOSE_STAGE}
+    restart: unless-stopped
+    expose:
+      - 8080
+
+  nginx:
+    image: ghcr.io/${GITHUB_REPOSITORY}/nginx:${COMPOSE_STAGE}
+    restart: unless-stopped
+    depends_on:
+      - app
+    expose:
+      - 80
+    ports:
+      - ${COMPOSE_NGINX_PORT}:80

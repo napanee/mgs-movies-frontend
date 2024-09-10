@@ -1,0 +1,16 @@
+services:
+  tests:
+    image: cirunner
+    build:
+      context: ..
+      dockerfile: deployment/cirunner/Dockerfile
+      cache_from:
+        - 'ghcr.io/${GITHUB_REPOSITORY}/cirunner-cache'
+      args:
+        BUILDKIT_INLINE_CACHE: 1
+    command: ['exit']
+    user: $USER
+    environment:
+      NODE_ENV: test
+    volumes:
+      - $PWD:/app

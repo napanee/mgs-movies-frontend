@@ -9,7 +9,9 @@
     "lint:js": "eslint . --ext ts,js,tsx,jsx",
     "lint:scss": "stylelint \"**/*.{ts,js,tsx,jsx}\"",
     "lint": "npm run lint:js; npm run lint:scss;",
+    "ci-lint": "npm run lint",
     "test": "jest --coverage --runInBand --verbose --detectOpenHandles",
+    "ci-test": "jest --detectOpenHandles",
     "test:watch": "jest --coverage --watch --runInBand",
     "codegen": "graphql-codegen --config codegen.ts"
   },
