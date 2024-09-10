@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  frontend:
+    container_name: movies
+    restart: unless-stopped
+    expose:
+      - 8080
+    build:
+      context: .
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.movies.rule=Host(`movies.app.local`)"
+      - "traefik.http.routers.movies.tls=true"
+    networks:
+      - traefik_web
+
+networks:
+  traefik_web:
+    external: true
