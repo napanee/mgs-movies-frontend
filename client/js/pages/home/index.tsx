@@ -28,8 +28,8 @@ const Home = () => {
 				{data?.movies.edges.map(({node}) => {
 					return (
 						<SwiperSlide key={node.id}>
-							<img src={`http://localhost:3000/media/${node.backdrop}`} className="backdrop" />
-							<img src={`http://localhost:3000/media/${node.logo}`} className="logo" />
+							<img src={`${process.env.API_URL}${node.backdropUrl}`} className="backdrop" />
+							<img src={`${process.env.API_URL}${node.logoUrl}`} className="logo" />
 						</SwiperSlide>
 					);
 				})}

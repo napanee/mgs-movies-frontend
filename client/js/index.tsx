@@ -8,7 +8,7 @@ import {theme} from './theme/theme';
 
 
 const container = document.getElementById('reactele');
-const link = new HttpLink({uri: process.env.API_URL});
+const link = new HttpLink({uri: `${process.env.API_URL}/graphql`});
 const cache = new InMemoryCache().restore(window.__APOLLO_STATE__);
 const client = new ApolloClient({link, cache});
 

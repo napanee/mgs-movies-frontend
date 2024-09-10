@@ -36,7 +36,7 @@ app.get('*', async (req, res) => {
 	const cache = new InMemoryCache();
 	const link = new HttpLink({
 		fetch,
-		uri: 'http://localhost:3000/graphql',
+		uri: `${process.env.API_URL}/graphql` || 'http://localhost:3000/graphql',
 	});
 	const sheet = new ServerStyleSheet();
 	const client = new ApolloClient({
