@@ -12,7 +12,7 @@ const config: Configuration = {
 	context: resolve(process.cwd(), 'src'),
 	output: {
 		filename: '[name].js',
-		path: resolve(process.cwd(), 'build'),
+		path: resolve(process.cwd(), 'dist'),
 	},
 	node: {
 		// Need this when working with express, otherwise the build fails

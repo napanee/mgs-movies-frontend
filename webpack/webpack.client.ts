@@ -12,7 +12,7 @@ const config: Configuration = {
 	output: {
 		filename: 'js/[name].js',
 		chunkFilename: 'js/[name]-[chunkhash].js',
-		path: join(process.cwd(), 'build', 'static'),
+		path: join(process.cwd(), 'dist', 'static'),
 		publicPath: '/static/',
 	},
 	plugins: [
