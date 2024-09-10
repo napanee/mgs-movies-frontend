@@ -8,7 +8,7 @@ export const Backdrop = styled.div`
 	}
 `;
 
-export const SliderWrapper = styled.div<{delay: number; speed: number}>`
+export const SliderWrapper = styled.div<{$delay: number; $speed: number}>`
 	position: relative;
 
 	.swiper {
@@ -39,11 +39,11 @@ export const SliderWrapper = styled.div<{delay: number; speed: number}>`
 		height: 100%;
 
 		.backdrop {
-			${({delay, speed}) => css`
+			${({$delay, $speed}) => css`
 				transition:
-					translate ${speed}ms ease,
-					filter ${speed*0.75}ms linear,
-					scale ${delay+speed}ms linear ${speed}ms;
+					translate ${$speed}ms ease,
+					filter ${$speed*0.75}ms linear,
+					scale ${$delay+$speed}ms linear ${$speed}ms;
 			`}
 			width: 100%;
 		}
@@ -93,8 +93,8 @@ export const SliderWrapper = styled.div<{delay: number; speed: number}>`
 	}
 
 	.swiper-pagination-bullet {
-		${({speed, theme}) => css`
-			transition: width ${speed}ms linear;
+		${({$speed, theme}) => css`
+			transition: width ${$speed}ms linear;
 			background-color: ${theme.swiper.pagination.color.inactive};
 		`}
 		display: block;
@@ -104,10 +104,10 @@ export const SliderWrapper = styled.div<{delay: number; speed: number}>`
 		border-radius: 4px;
 
 		&::before {
-			${({speed, theme}) => css`
+			${({$speed, theme}) => css`
 				transition:
-					opacity ${speed}ms linear,
-					width 0s linear ${speed}ms;
+					opacity ${$speed}ms linear,
+					width 0s linear ${$speed}ms;
 				background-color: ${theme.swiper.color};
 			`}
 			content: "";
@@ -123,15 +123,15 @@ export const SliderWrapper = styled.div<{delay: number; speed: number}>`
 	}
 
 	.swiper-pagination-bullet-active {
-		${({speed}) => css`
-			transition: width ${speed}ms linear;
+		${({$speed}) => css`
+			transition: width ${$speed}ms linear;
 		`}
 		width: 25px;
 		border-radius: 12px;
 
 		&::before {
-			${({delay, speed}) => css`
-				transition: width ${delay}ms linear ${speed}ms;
+			${({$delay, $speed}) => css`
+				transition: width ${$delay}ms linear ${$speed}ms;
 			`}
 			opacity: 1;
 			width: 100%;

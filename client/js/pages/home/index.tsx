@@ -13,7 +13,7 @@ const Home = () => {
 	const {data} = useHomeQuery();
 
 	return (
-		<S.SliderWrapper delay={delay} speed={speed}>
+		<S.SliderWrapper $delay={delay} $speed={speed}>
 			<Swiper
 				allowTouchMove={false}
 				autoplay={{
