@@ -29,6 +29,7 @@ RUN set -ex \
 
 COPY . /build/
 
+RUN npm run codegen
 RUN npm run build
 
 
