@@ -4,9 +4,9 @@ query home {
 			node {
 				id
 				title
-				backdrop
-				logo
-				poster
+				backdropUrl
+				logoUrl
+				posterUrl
 				genres {
 					name
 				}
