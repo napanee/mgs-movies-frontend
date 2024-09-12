@@ -15,7 +15,7 @@ export const SliderWrapper = styled.div<{$delay: number; $speed: number}>`
 		overflow: hidden;
 		margin: auto;
 		width: 100vw;
-		height: 100vh;
+		height: 75vh;
 	}
 
 	.swiper-wrapper {
@@ -46,13 +46,15 @@ export const SliderWrapper = styled.div<{$delay: number; $speed: number}>`
 					scale ${$delay+$speed}ms linear ${$speed}ms;
 			`}
 			width: 100%;
+			height: 100%;
+			object-fit: cover;
 		}
 
 		.logo {
 			position: absolute;
-			bottom: 5rem;
-			left: 2rem;
-			width: 50%;
+			bottom: clamp(50px, 5rem, 3vw);
+			left: clamp(50px, 5rem, 3vw);
+			width: clamp(300px, 50%, 500px);
 		}
 
 		&-active {
