@@ -3,7 +3,7 @@ import type {CodegenConfig} from '@graphql-codegen/cli';
 
 const config: CodegenConfig = {
 	overwrite: true,
-	schema: 'https://movies.martingschneider.de/graphql',
+	schema: 'https://api.movies.martingschneider.de/graphql',
 	documents: 'client/js/**/*.graphql',
 	generates: {
 		'./client/js/graphql-types.ts': {
