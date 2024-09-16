@@ -65,7 +65,7 @@
     "@types/webpack-env": "^1.18.0",
     "@types/webpack-node-externals": "^3.0.4",
     "@typescript-eslint/eslint-plugin": "^7.4.0",
-    "@typescript-eslint/parser": "^7.4.0",
+    "@typescript-eslint/parser": "^7.18.0",
     "babel-plugin-tsconfig-paths-module-resolver": "^1.0.4",
     "cross-env": "^7.0.3",
     "dotenv-webpack": "^8.0.1",
